@@ -166,18 +166,20 @@ st.write("Total amount paid: USD {:.2f}".format(cuota_mensual * plazo_amortizaci
 
 
 # Cálculo de cuota mensual asumiendo pago de deuda del 80%
-st.subheader("Scenario 2: Payment of 80% of the money")
-monto_80 = (monto_beca + monto_credito) * 0.8 + intereses_totales
+st.subheader("Scenario 2: 80% of the debt waived")
+monto_80 = (monto_beca + monto_credito) * 0.2 + intereses_totales
 cuota_mensual_80 = cuota_mensual_fija(monto_80, interes_amortizacion, plazo_amortizacion)
+
 st.write(f"Fixed monthly fee in a period of {plazo_amortizacion} years: USD {cuota_mensual_80:.2f}")
 #print(f'\nEscenario 2: Pago del 80% del dinero. \n Cuota fija mensual en un periodo de {plazo_amortizacion} años: USD {cuota_mensual_80:.2f}')
 st.write("Total amount paid: USD {:.2f}".format(cuota_mensual_80 * plazo_amortizacion * 12))
 
 
 # Cálculo de cuota mensual asumiendo pago de deuda del 60%
-st.subheader("Scenario 3: Payment of 60% of the money")
-monto_60 = (monto_beca + monto_credito) * 0.6 + intereses_totales
+st.subheader("Scenario 3: 60% of the debt waived")
+monto_60 = (monto_beca + monto_credito) * 0.4 + intereses_totales
 cuota_mensual_60 = cuota_mensual_fija(monto_60, interes_amortizacion, plazo_amortizacion)
+
 st.write(f"Fixed monthly fee in a period of {plazo_amortizacion} years: USD {cuota_mensual_60:.2f}")
 #print(f'\nEscenario 3: Pago del 60% del dinero. \n Cuota fija mensual en un periodo de {plazo_amortizacion} años: USD {cuota_mensual_60:.2f}')
 st.write("Total amount paid: USD {:.2f}".format(cuota_mensual_60 * plazo_amortizacion * 12))
